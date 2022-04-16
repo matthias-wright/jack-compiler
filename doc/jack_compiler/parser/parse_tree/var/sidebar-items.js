@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["VarKind","The variable kind: `static`, `field`, `argument`, `variable` (local)."],["VarType","The variable type: `int`, `char`, `boolean`, `className`."]],"struct":[["VarNode","Represents a variable in the parse tree."]]});

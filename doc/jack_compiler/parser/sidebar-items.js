@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["error","Defines parse errors."],["parse_tree","Defines the parse tree."]],"struct":[["Parser","Reads the tokens and builds a parse tree."]]});

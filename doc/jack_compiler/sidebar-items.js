@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["io","This module handles file reading and writing."],["parser","Reads the tokens and builds a parse tree."],["tokenizer","Reads text files containing Jack code and produces a list of tokens."],["vm_writer","Takes in a parse tree and writes the corresponding VM code."]]});

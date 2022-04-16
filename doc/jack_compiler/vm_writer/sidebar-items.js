@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["VMWriter","Takes in a parse tree and writes the corresponding VM code."]]});

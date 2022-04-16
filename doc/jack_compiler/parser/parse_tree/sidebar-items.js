@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["class","Represents a class in the parse tree."],["expression","Represents an expression in the parse tree."],["statement","Represents the statements in the parse tree."],["subroutine","Represents a subroutine in the parse tree."],["var","Represents the variables in the parse tree."]],"struct":[["ParseTree","Defines the parse tree."]]});

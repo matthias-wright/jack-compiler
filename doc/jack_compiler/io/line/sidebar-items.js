@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Line","Holds a line of Jack code and the corresponding line number."]]});

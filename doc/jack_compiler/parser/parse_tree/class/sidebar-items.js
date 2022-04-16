@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ClassNode","Represents a class in the parse tree. Grammar rule: `class` className `{` classVarDec* subroutineDec* `}`"],["ClassVarNode","Represents the variables of class. Grammar rule: (`static` | `field`) type varName (`,` varName)* `;`"]]});

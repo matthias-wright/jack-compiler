@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ParseError","This error occurs when the Jack code violates the syntax rules."]]});
