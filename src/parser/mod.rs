@@ -953,7 +953,7 @@ impl Parser {
             Token::Symbol(symbol)
             if (symbol == "-" || symbol == "~")
                 && index > 0
-                && self.token_is_symbol(&tokens[index - 1].token) =>
+                && self.token_is_symbol(&tokens[index].token) =>
                 {
                     // unary operator followed by term
                     let (term_node, j) = self.parse_term(tokens, index + 1);
@@ -984,7 +984,7 @@ impl Parser {
         let mut index = start_index;
         let mut expression_nodes = Vec::new();
         while index <= end_index {
-            let expr_end_index = match self.find_symbol(tokens, ",", index, end_index) {
+            let expr_end_index = match self.next_comma_in_expression_list(tokens, index, end_index) {
                 Ok(comma_index) => comma_index,
                 Err(_) => end_index + 1,
             };
@@ -1074,6 +1074,33 @@ impl Parser {
             }
             if let Token::Symbol(symbol) = &tokens[index].token {
                 if symbol == target_symbol {
+                    return Ok(index);
+                }
+            }
+            index += 1;
+        }
+    }
+
+    fn next_comma_in_expression_list(
+        &self,
+        tokens: &[TokenWrapper],
+        start_index: usize,
+        end_index: usize,
+    ) -> Result<usize, ParseError> {
+        let mut index = start_index;
+        let mut bracket_count = 0;
+        loop {
+            if index == end_index {
+                return Err(ParseError);
+            }
+            if let Token::Symbol(symbol) = &tokens[index].token {
+                if symbol == "(" {
+                    bracket_count += 1;
+                }
+                if symbol == ")" {
+                    bracket_count -= 1;
+                }
+                if symbol == "," && bracket_count == 0 {
                     return Ok(index);
                 }
             }
